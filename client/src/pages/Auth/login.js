@@ -32,11 +32,11 @@ const Login = () => {
           user: res.data.user,
           token: res.data.token,
         });
+        
         localStorage.setItem("auth", JSON.stringify(res.data));
         navigate(location.state || "/");
       } else {
-        alert("invalid Data");
-        // toast.error(res.data.message);
+        alert(res.data.message || "Invalid Data");
       }
     } catch (error) {
       console.log(error);
